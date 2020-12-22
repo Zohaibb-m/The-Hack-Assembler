@@ -45,9 +45,10 @@ void ReadLabels(string filename){//To read all the labels of the program
 		if(!line.empty()){						//If line is empty then it is skipped
 		lineno++;								//Line counter to count the no of instructions
 		if(line[0]!='(')continue;				//The code below this line is only executed if the line is a label i.e starts from "("
+		lineno--;
 		string label(line.begin()+1,line.begin()+line.find(')'));		//This line seperates out the label and stores it in a variable named label
 		Symbol[symbolindex]=label;				//Storing the label in the symbol table along with its address
-		Address[symbolindex++]=lineno;
+		Address[symbolindex++]=lineno+1;
 		}
 	}
 }
