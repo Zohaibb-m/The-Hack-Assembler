@@ -35,7 +35,7 @@ int symbolindex=23,n=16;
 void ReadLabels(string filename){//To read all the labels of the program
 	ifstream file1;
 	string line;
-	int lineno=0;
+	int lineno=-1;
 	file1.open(filename.c_str(),ios::in);		//Opening the file
 	if(file1.is_open()){
 		while(getline(file1,line)){				//Reading file line by line
